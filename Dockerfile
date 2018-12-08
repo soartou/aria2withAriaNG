@@ -17,11 +17,15 @@ RUN \
 COPY aria2.conf /conf-copy/aria2.conf
 COPY start.sh /conf-copy/start.sh
 RUN chmod +x /conf-copy/start.sh
+RUN service mini_httpd stop
+RUN service mini_httpd reload
+RUN service mini_httpd start
+
 WORKDIR /
  
-EXPOSE 6800:6800 6880:80
-EXPOSE 6881-6999:6881-6999
-EXPOSE 6881-6999:6881-6999/udp
+EXPOSE 6800 80
+EXPOSE 6881-6999
+EXPOSE 6881-6999/udp
 
 VOLUME /config /downloads
  
