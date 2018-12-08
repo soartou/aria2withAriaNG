@@ -14,7 +14,10 @@ RUN \
  wget --no-check-certificate -O "/conf-copy/dht.dat" "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/other/Aria2/dht.dat"
 
 #RUN service mini_httpd restart 
-COPY aria2.conf /config/aria2.conf
+COPY aria2.conf /conf-copy/aria2.conf
+COPY start.sh /conf-copy/start.sh
+RUN chmod +x /conf-copy/start.sh
+WORKDIR /
  
 EXPOSE 6800:6800 6880:80
 EXPOSE 6881-6999:6881-6999
