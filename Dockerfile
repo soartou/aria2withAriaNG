@@ -15,7 +15,8 @@ RUN \
  rc-service mini_httpd start && \
  mkdir /config && \
  mkdir /downloads && \ 
- touch /config/aria2.session
+ touch /config/aria2.session && \
+ wget --no-check-certificate -O "/config/dht.dat" "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/other/Aria2/dht.dat"
  
 COPY aria2.conf /config/aria2.conf
  
