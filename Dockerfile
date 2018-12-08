@@ -17,7 +17,7 @@ RUN \
 COPY aria2.conf /conf-copy/aria2.conf
 COPY start.sh /conf-copy/start.sh
 RUN chmod +x /conf-copy/start.sh
-RUN service mini_httpd stop
+#RUN service mini_httpd stop
 RUN service mini_httpd reload
 RUN service mini_httpd start
 
