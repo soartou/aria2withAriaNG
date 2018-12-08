@@ -1,5 +1,4 @@
 FORM alpine:3.8
-############## build stage ##############
 
 # package versions
 ARG ARIA2C_VER="1.34.0-r0"
@@ -12,4 +11,18 @@ RUN \
  wget -N --no-check-certificate https://github.com/mayswind/AriaNg/releases/download/1.0.0/AriaNg-1.0.0.zip && \
  unzip AriaNg-1.0.0.zip && rm -rf AriaNg-1.0.0.zip && \
  chown minihttpd /www && \
+ sed -ie 's/dir=\/var\/www\/localhost\/htdocs/dir=\/www/g' /etc/mini_httpd/mini_httpd.conf && \
+ rc-service mini_httpd start && \
+ mkdir /config && \
+ mkdir /downloads && \ 
+ touch /config/aria2.session
  
+COPY aria2.conf /config/aria2.conf
+ 
+EXPOSE 6800:6800 6880:80
+EXPOSE 6881-6999:6881-6999
+EXPOSE 6881-6999:6881-6999/udp
+
+VOLUME /config /downloads
+ 
+ENTRYPOINT ["ariac","-D","--conf-path=/config/aria2.conf"]
