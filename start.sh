@@ -14,4 +14,4 @@ fi
 
 
 darkhttpd /www --port 80 &
-aria2c --conf-path=/config/aria2.conf
+aria2c -D --conf-path=/config/aria2.conf
