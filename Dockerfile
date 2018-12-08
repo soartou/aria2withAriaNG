@@ -12,7 +12,7 @@ RUN \
  unzip AriaNg-1.0.0.zip && rm -rf AriaNg-1.0.0.zip && \
  chown minihttpd /www && \
  sed -ie 's/dir=\/var\/www\/localhost\/htdocs/dir=\/www/g' /etc/mini_httpd/mini_httpd.conf && \
- rc-service mini_httpd start && \
+ rc-service mini_httpd restart && \
  mkdir /config && \
  mkdir /downloads && \ 
  touch /config/aria2.session && \
