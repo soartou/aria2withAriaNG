@@ -13,4 +13,4 @@ if [ ! -f /config/dht.dat ]; then
 fi
 
 aria2c -D --conf-path=/config/aria2.conf
-darkhttpd /www --port 80
+darkhttpd /www --port 6880
