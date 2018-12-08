@@ -20,7 +20,7 @@ RUN chmod +x /conf-copy/start.sh
 
 WORKDIR /
  
-EXPOSE 6800 80
+EXPOSE 6800 6880
 EXPOSE 6881-6999
 EXPOSE 6881-6999/udp
 
