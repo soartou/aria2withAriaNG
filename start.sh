@@ -13,5 +13,5 @@ if [ ! -f /config/dht.dat ]; then
 fi
 
 
-service mini_httpd start
+# service mini_httpd start
 aria2c --conf-path=/config/aria2.conf
