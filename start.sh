@@ -12,6 +12,5 @@ if [ ! -f /config/dht.dat ]; then
 	cp /conf-copy/dht.dat /config/dht.dat
 fi
 
-
-darkhttpd /www --port 80 &
 aria2c -D --conf-path=/config/aria2.conf
+darkhttpd /www --port 80
