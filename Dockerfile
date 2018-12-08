@@ -17,7 +17,7 @@ RUN \
  touch /config/aria2.session && \
  wget --no-check-certificate -O "/config/dht.dat" "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/other/Aria2/dht.dat"
 
-RUN rc-service mini_httpd restart 
+RUN service mini_httpd restart 
 COPY aria2.conf /config/aria2.conf
  
 EXPOSE 6800:6800 6880:80
