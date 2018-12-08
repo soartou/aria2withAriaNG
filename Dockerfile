@@ -12,12 +12,12 @@ RUN \
  unzip AriaNg-1.0.0.zip && rm -rf AriaNg-1.0.0.zip && \
  chown minihttpd /www && \
  sed -ie 's/dir=\/var\/www\/localhost\/htdocs/dir=\/www/g' /etc/mini_httpd/mini_httpd.conf && \
- rc-service mini_httpd restart && \
  mkdir /config && \
  mkdir /downloads && \ 
  touch /config/aria2.session && \
  wget --no-check-certificate -O "/config/dht.dat" "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/other/Aria2/dht.dat"
- 
+
+RUN rc-service mini_httpd restart 
 COPY aria2.conf /config/aria2.conf
  
 EXPOSE 6800:6800 6880:80
