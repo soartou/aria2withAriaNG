@@ -1,4 +1,4 @@
-FORM alpine:3.8
+FROM alpine:3.8
 
 # package versions
 ARG ARIA2C_VER="1.34.0-r0"
