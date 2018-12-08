@@ -6,7 +6,7 @@ RUN \
  mkdir /www && cd /www && \
  wget -N --no-check-certificate https://github.com/mayswind/AriaNg/releases/download/1.0.0/AriaNg-1.0.0.zip && \
  unzip AriaNg-1.0.0.zip && rm -rf AriaNg-1.0.0.zip && \
- chown -r minihttpd /www && \
+ chown minihttpd /www && \
  sed -ie 's/dir=\/var\/www\/localhost\/htdocs/dir=\/www/g' /etc/mini_httpd/mini_httpd.conf && \
  mkdir /conf-copy && \
  mkdir /config && \
