@@ -26,4 +26,4 @@ EXPOSE 6881-6999:6881-6999/udp
 
 VOLUME /config /downloads
  
-ENTRYPOINT ["ariac","-D","--conf-path=/config/aria2.conf"]
+ENTRYPOINT ["aria2c","-D","--conf-path=/config/aria2.conf"]
