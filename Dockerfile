@@ -2,7 +2,7 @@ FROM alpine:3.8
 
 RUN \
  apk update &&\
- apk add bash aria2 darkhttpd wget unzip --no-cache && \
+ apk add bash aria2 darkhttpd wget unzip su-exec --no-cache && \
  mkdir /www && cd /www && \
  wget -N --no-check-certificate https://github.com/mayswind/AriaNg/releases/download/1.0.0/AriaNg-1.0.0.zip && \
  unzip AriaNg-1.0.0.zip && rm -rf AriaNg-1.0.0.zip && \
