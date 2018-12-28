@@ -24,6 +24,10 @@ EXPOSE 6800 6880
 EXPOSE 6881-6999
 EXPOSE 6881-6999/udp
 
+ENV PUID=1000 PGID=100
+
 VOLUME /config /downloads
  
-ENTRYPOINT ["/conf-copy/start.sh"]
+ENTRYPOINT \
+    chown -R $PUID:$PGID /config /conf-copy /www && \
+    su-exec $PUID:$PGID /conf-copy/start.sh
